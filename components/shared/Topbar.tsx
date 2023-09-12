@@ -7,7 +7,7 @@ function Topbar() {
             <link href="/"  className="flex 
             items-center gap-4">
                   <Image src="/logo.svg" alt="logo" width={28} height={28} />
-                  <p className="text-heading3-bold text-light-1" ></p>
+                  <p className="text-heading3-bold text-light-1 max-xs:hidden">Threads</p>
             </link>
       </nav>
       )
