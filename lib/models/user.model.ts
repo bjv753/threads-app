@@ -14,7 +14,7 @@ const userSchema = new mongoose.Schema({
       ],
           onboarded: {
                         type: Boolean,
-                  default: false
+                  default: false,
             },
           communities: [
             {
@@ -25,3 +25,5 @@ const userSchema = new mongoose.Schema({
 });
 
 const User = mongoose.models.User || mongoose.model('User', userSchema);
+
+export default User;
