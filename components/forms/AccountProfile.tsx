@@ -1,16 +1,8 @@
 "use client"
 
-import React, {useState} from 'react';
 import { useForm } from 'react-hook-form';
 import { Button } from "@/components/ui/button"
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -18,7 +10,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { UserValidation } from '@/lib/validations/user';
 import * as z from "zod"
 import Image from 'next/image';
-import { ChangeEvent } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { isBase64Image } from '@/lib/utils';
 import { useUploadThing } from '@/lib/uploadthing';
 import { usePathname, useRouter } from 'next/navigation';
@@ -145,7 +137,7 @@ const onSubmit = async (values: z.infer<typeof UserValidation>) => {
                         onChange={(e) => handleImage(e, field.onChange)}
                   />
               </FormControl>
-              
+              <FormMessage />
             </FormItem>
           )}
         />
@@ -165,6 +157,7 @@ const onSubmit = async (values: z.infer<typeof UserValidation>) => {
                         {...field}
                   />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
@@ -183,6 +176,7 @@ const onSubmit = async (values: z.infer<typeof UserValidation>) => {
                         {...field}
                   />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
@@ -201,6 +195,7 @@ const onSubmit = async (values: z.infer<typeof UserValidation>) => {
                         {...field}
                   />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
