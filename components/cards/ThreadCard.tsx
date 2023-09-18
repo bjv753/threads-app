@@ -33,7 +33,7 @@ createdAt,
 comments
 }: Props) => {
       return (
-            <article>
+            <article className="flex w-full flex-col rounded-xl bg-dark-2 p-7" >
                   <h2 className="text-small-regular text-light-2">
                         {content}
                   </h2>
