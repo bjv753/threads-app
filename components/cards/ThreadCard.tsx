@@ -33,7 +33,8 @@ content,
 author,
 community,
 createdAt,
-comments
+comments,
+isComment
 }: Props) => {
       return (
             <article className="flex w-full flex-col rounded-xl bg-dark-2 p-7" >
@@ -71,7 +72,7 @@ comments
 
                               {isComment && comments.length > 0 && (
                                     <Link href={`/thread/${id}`}>
-                                          <p></p>
+                                          <p className="mt-1 text-subtle-medium text-gray-1" >{comments.length} replies</p>
                                     </Link>
                               )}
                         </div>
