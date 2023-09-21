@@ -39,6 +39,10 @@ const Page = async ({params}: {params: { id: string }}) => {
                   currentUserId={JSON.stringify(userInfo._id)}
             />
       </div>
+
+      <div className="mt-10">
+
+      </div>
     </section>
 )
 }

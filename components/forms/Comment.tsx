@@ -12,6 +12,7 @@ import { usePathname, useRouter } from 'next/navigation';
 // import { updateUser } from '@/lib/actions/user.actions';
 import { CommentValidation } from '@/lib/validations/thread';
 import Image from "next/image";
+import { addCommentToThread } from "@/lib/actions/thread.actions";
 // import { createThread } from "@/lib/actions/thread.actions";
 
 interface Props {
@@ -32,14 +33,9 @@ const Comment = ({ threadId, currentUserImg, currentUserId }: Props) => {
         });
 
       const onSubmit = async (values: z.infer<typeof CommentValidation>) => {
-            // await createThread({ 
-            //       text: values.thread, 
-            //       author: userId, 
-            //       communityId: null, 
-            //       path: pathname
-            // });
+            await addCommentToThread(threadId, values.thread, JSON.parse(currentUserId), pathname);
 
-            router.push('/')
+            form.reset();
       }
 
       return (
