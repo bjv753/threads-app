@@ -90,9 +90,22 @@ export async function fetchUserPosts(userId: string) {
       }
 }
 
-export async function fetchUsers({}) {
+export async function fetchUsers({
+      userId,
+      searchString = "",
+      pageNumber = 1,
+      pageSize = 20,
+      sortBy = "desc"
+
+} : {
+      userId: string;
+}) {
       try {
             connectToDB();
+
+            const skipAmount = (pageNumber - 1) * getJsPageSizeInKb;
+
+            const regex = new RegExp(searchString, "i"), 
       } catch (error) {
             
       }
