@@ -6,24 +6,25 @@ const communitySchema = new mongoose.Schema({
       name: { type: String, required: true},
       image: String,
       bio: String,
+      createdBy: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
+      },
+
       threads: [
             {
                   type: mongoose.Schema.Types.ObjectId,
                   ref: 'Thread'
             }
       ],
-          onboarded: {
-                        type: Boolean,
-                  default: false,
-            },
-          communities: [
+          members: [
             {
                   type: mongoose.Schema.Types.ObjectId,
-                  ref: 'Community'
+                  ref: 'User'
             }
           ]
 });
 
-const User = mongoose.models.User || mongoose.model('User', userSchema);
+const Community = mongoose.models.Community || mongoose.model('Community', communitySchema);
 
-export default User;
+export default Community;
